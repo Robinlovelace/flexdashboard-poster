@@ -8,51 +8,14 @@
 
 
 
-<title>Short title: Flexdashboard poster template</title>
+<title>Geographic data with R: An overview</title>
 
-<meta property="og:title" content="Short title: Flexdashboard poster template" />
+<meta property="og:title" content="Geographic data with R: An overview" />
 
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
 
 <link rel="icon" href="data:image/x-icon;" type="image/x-icon">
 
-<style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-</style>
 
 <script type="text/javascript">
 window.FlexDashboardComponents = [];
@@ -850,7 +813,7 @@ html, body {
   
 </span>
 <span class="navbar-brand">
-  Short title: Flexdashboard poster template
+  Geographic data with R: An overview
   <span class="navbar-author">
         </span>
 </span>
@@ -2600,7 +2563,8 @@ window.FlexDashboardComponents.push({
       var dataHref = valueOutput.attr('data-href');
       if (dataHref) {
         valueBox.addClass('linked-value');
-        valueBox.on('click', function(e) {
+        valueBox.off('click.value-box');
+        valueBox.on('click.value-box', function(e) {
           window.FlexDashboardUtils.showLinkedValue(dataHref);
         });
       }
@@ -2640,7 +2604,7 @@ window.FlexDashboardComponents.push({
 <td>
 <center>
 <h3>
-<strong>Somewhat long title of a very interesting poster</strong>
+<strong>Geographic data with R: An overview</strong>
 </h3>
 </center>
 </td>
@@ -2660,116 +2624,46 @@ window.FlexDashboardComponents.push({
 </tr>
 </table>
 <hr>
-<p><strong>Background:</strong> Although several workflows are currently available for academic poster preparation, none of them are ideal. Commonly, point-and-click software is used to arrange poster content, regardless of the analysis pipeline. Most of these software tools are propietary, thus trapping our content. Typical free and script based tools such as <span class="math inline">\(\LaTeX\)</span> might not be appealing or seem as complex as using a point-and-click tool. This work shows a simple template to prepare posters in a free and reproducible workflow using R, rmarkdown, flexdashboard and webshot.</p>
+<p><strong>Data types:</strong> .</p>
 </div>
 </div>
 <div id="row-2" class="section level2" data-height="75">
 <h2>Row 2</h2>
-<div id="methods" class="section level3">
-<h3><strong>Methods</strong></h3>
-<div id="workflow" class="section level4">
-<h4>Workflow</h4>
+<div id="packages-for-geocomputation" class="section level3">
+<h3><strong>Packages for Geocomputation</strong></h3>
+<div id="geographic-vector-data" class="section level4">
+<h4>Geographic vector data</h4>
 <p><strong>Dependencies</strong></p>
-<p>This poster template dependes on the following R packages</p>
-<ul>
-<li>rmarkdown <span class="citation">(Allaire et al. 2017)</span></li>
-<li>flexdashboard <span class="citation">(Allaire 2017)</span></li>
-<li>webshot <span class="citation">(Chang 2016)</span></li>
-</ul>
-<p>To use <code>scripts/generic-content.R</code> you will need a GNU/Linux system and a working installation of <code>imagemagick</code>.</p>
-<p><strong>Preparing your analysis environment</strong></p>
-<p>In order to use this poster template, you need to:</p>
-<ol style="list-style-type: decimal">
-<li>Clone <a href="https://github.com/odeleongt/flexdashboard-poster"><code>odeleongt/flexdashboard-poster</code></a> from github</li>
-<li>Install the required packages<br />
-<code>install.packages(&quot;rmarkdown&quot;, &quot;flexdashboard&quot;, &quot;webshot&quot;)</code></li>
-<li>Install the PhantomJS library<br />
-<code>webshot::install_phantomjs()</code></li>
-<li>Edit the template to fit your needs</li>
-<li>Run <code>scripts/render-poster.R</code></li>
-</ol>
+<p><strong>sf</strong></p>
 </div>
-<div id="hosting-your-poster" class="section level4">
-<h4>Hosting your poster</h4>
-<p>You can host the poster generated by this template in GitHub pages by forking the repository, working on your local clone and checking out the contents of the <code>output/</code> directory into the root directory of the <code>gh-pages</code> branch:</p>
-<pre><code>## Finish commiting your updates ...
-
-## Move to gh-pages
-git checkout gh-pages
-
-## Only checkout specific files
-git checkout master output/*
-
-## Copy files and clean up
-cp -r output/* . &amp;&amp; rm -R output/*
-rmdir output &amp;&amp; git reset HEAD
-
-## Add contents, commit and publish
-git add *
-git commit -m &#39;Update published poster&#39;
-git push origin gh-pages</code></pre>
+<div id="geographic-raster-data" class="section level4">
+<h4>Geographic raster data</h4>
 </div>
 </div>
-<div id="results" class="section level3">
-<h3><strong>Results</strong></h3>
-<p>Here you would describe some amazing results. Since this poster is about making a poster, I show the last poster.</p>
-<p><strong>Fig. 1: Even the wisest cannot tell. For the mirror… shows many things…</strong> <img src="poster.png" alt="What will I see?" style="width:100%"></img></p>
+<div id="data-access" class="section level3">
+<h3><strong>Data access</strong></h3>
+<p><strong>Fig. 1: Even the wisest cannot tell. For the mirror… shows many things…</strong> <!-- <img src="poster.png" alt="What will I see?" style="width:100%"></img> --></p>
 <div class="knitr-options" data-fig-width="576" data-fig-height="288">
 
 </div>
-<div id="reproducible-results-with-r" class="section level4">
-<h4>Reproducible results with R</h4>
-<p>As we have come to expect, results from R computations can be included as well. Since adjusting figure positions will be almost always necesary, figures are by default saved to <code>output/img/</code> and not shown on the poster. You need to manually include them using a <img> tag as shown below.</p>
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html">**Fig. 1: Place the volcano figure where you please.**
-<span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;img/volcano-plot-1.png&quot;</span><span class="ot"> style=</span><span class="st">&quot;width:100%&quot;</span><span class="kw">&gt;&lt;/img&gt;</span></code></pre></div>
+<div id="geoportals" class="section level4">
+<h4>Geoportals</h4>
 </div>
-<div id="output-for-printing" class="section level4">
-<h4>Output for printing</h4>
-<p>A png file is produced by <code>scripts/render-poster.R</code>. By default it is set to use a 300ppi resolution and A1 size. For now, some testing is necessary to adjust scale and poster size.</p>
+<div id="api-packages" class="section level4">
+<h4>API Packages</h4>
+</div>
+<div id="file-formats" class="section level4">
+<h4>File formats</h4>
 </div>
 </div>
-<div id="discussion" class="section level3">
-<h3><strong>Discussion</strong></h3>
-<div class="knitr-options" data-fig-width="576" data-fig-height="460">
-
-</div>
-<p>Since there are so many tools that can be used to prepare posters, and not a single one satisfies my needs, I prepared this <em>other</em> tool to… nah it still is missing things.</p>
-<p><strong>Fig. 3: Some authoritative content</strong> <img src="img/standards.png" style="width:100%"></img></p>
-<div id="limitations" class="section level4">
-<h4>Limitations</h4>
-<p>Since the png file is generated as a snapshot of the html poster, several limitations should be considered:</p>
-<ul>
-<li>Resolution is very limited by the resources in your system</li>
-<li>Larger formats require much more resources to render</li>
-<li>Complex posters can take longer to load, so you have to try different delays</li>
-<li>The preview shown in <code>poster/poster_frame.html</code> could be very different to the final rendered image</li>
-<li>“I can’t fit enough text/figures!”<br />
-↑ that one’s on you, nobody likes a crammed poster</li>
-</ul>
-<hr>
+<div id="advanced-methods" class="section level3">
+<h3><strong>Advanced methods</strong></h3>
+<div id="rastervector-interactions" class="section level4">
+<h4>Raster/vector interactions</h4>
 </div>
 <div id="contact-information" class="section level4">
 <h4>Contact information</h4>
-<p>Oscar de León<br />
-<a
-  title="Universidad del Valle de Guatemala"
-  href="mailto:odeleon@ces.uvg.edu.gt?Subject=Influenza%20incidence%20Guatemala"
-  target="_top"
->odeleon@ces.uvg.edu.gt</a><br />
-<a
-  title="GitHub profile"
-  href="https://github.com/odeleongt"
-  target="_blank"
->https://github.com/odeleongt</a></p>
 <p><strong>Aknowledgements:</strong></p>
-<p>The time had come to face the fact that I was long overdue posting this template.</p>
-<blockquote class="twitter-tweet" data-lang="en">
-<p lang="en" dir="ltr">
-The time has come to face the fact that I must create a poster. It's been a while. What's the least painful way to do this these days?
-</p>
-— Kara Woo <a href="https://twitter.com/kara_woo/status/856644892319137792">April 24, 2017</a>
-</blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 </div>
 </div>
@@ -2782,17 +2676,6 @@ The time has come to face the fact that I must create a poster. It's been a whil
 <div id="section-1" class="section level3 small" data-width="50">
 <h3></h3>
 <p><strong>References</strong></p>
-<div id="refs" class="references">
-<div id="ref-flexdashboard">
-<p>Allaire, JJ. 2017. <em>Flexdashboard: R Markdown Format for Flexible Dashboards</em>. <a href="https://CRAN.R-project.org/package=flexdashboard" class="uri">https://CRAN.R-project.org/package=flexdashboard</a>.</p>
-</div>
-<div id="ref-rmarkdown">
-<p>Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen, Hadley Wickham, Aron Atkins, Rob Hyndman, and Ruben Arslan. 2017. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-</div>
-<div id="ref-webshot">
-<p>Chang, Winston. 2016. <em>Webshot: Take Screenshots of Web Pages</em>. <a href="https://CRAN.R-project.org/package=webshot" class="uri">https://CRAN.R-project.org/package=webshot</a>.</p>
-</div>
-</div>
 </div>
 </div>
 
@@ -2816,7 +2699,7 @@ $(document).ready(function () {
 
 <div id="flexdashboard-source-code">
 <pre class="line-numbers"><code class="language-r">---
-title: "**Short title:** Flexdashboard poster template"
+title: "**Geographic data with R:** An overview"
 output: 
   flexdashboard::flex_dashboard:
     self_contained: false
@@ -2852,7 +2735,7 @@ knitr::opts_chunk$set(
 <table style="width:100%">
 <tr>
   <td><center><h3>
-  **Somewhat long title of a very interesting poster**
+  **Geographic data with R: An overview**
   </h3></center></td>
   <td rowspan="2">
   <img src="img/logo.png" style="width:128px"></img>
@@ -2869,85 +2752,26 @@ knitr::opts_chunk$set(
 
 <hr>
 
-**Background:** Although several workflows are currently available for academic
-poster preparation, none of them are ideal.
-Commonly, point-and-click software is used to arrange poster content,
-regardless of the analysis pipeline.
-Most of these software tools are propietary, thus trapping our content.
-Typical free and script based tools such as $\LaTeX$ might not be appealing
-or seem as complex as using a point-and-click tool.
-This work shows a simple template to prepare posters in a free and reproducible
-workflow using R, rmarkdown, flexdashboard and webshot.
-
-
-
+**Data types:** .
 
 ## Row 2 {data-height=75}
 
-### **Methods**
+### **Packages for Geocomputation**
 
-#### Workflow
+#### Geographic vector data
 
 **Dependencies**
 
-This poster template dependes on the following R packages
 
-- rmarkdown [@rmarkdown]
-- flexdashboard [@flexdashboard]
-- webshot [@webshot]
+**sf**
 
-To use `scripts/generic-content.R` you will need a GNU/Linux system
-and a working installation of `imagemagick`.
+#### Geographic raster data
 
 
-**Preparing your analysis environment**
-
-In order to use this poster template, you need to:
-
-1. Clone [`odeleongt/flexdashboard-poster`](https://github.com/odeleongt/flexdashboard-poster)
-  from github
-1. Install the required packages  
-  `install.packages("rmarkdown", "flexdashboard", "webshot")`
-1. Install the PhantomJS library  
-  `webshot::install_phantomjs()`
-1. Edit the template to fit your needs
-1. Run `scripts/render-poster.R`
-
-
-#### Hosting your poster
-
-You can host the poster generated by this template in GitHub pages by
-forking the repository, working on your local clone and
-checking out the contents of the `output/` directory into the
-root directory of the `gh-pages` branch:
-
-```{}
-## Finish commiting your updates ...
-
-## Move to gh-pages
-git checkout gh-pages
-
-## Only checkout specific files
-git checkout master output/*
-
-## Copy files and clean up
-cp -r output/* . && rm -R output/*
-rmdir output && git reset HEAD
-
-## Add contents, commit and publish
-git add *
-git commit -m 'Update published poster'
-git push origin gh-pages
-```
-
-
-### **Results**
-
-Here you would describe some amazing results.
-Since this poster is about making a poster, I show the last poster.
+### **Data access**
 
 **Fig. 1: Even the wisest cannot tell. For the mirror… shows many things…**
-<img src="poster.png" alt="What will I see?" style="width:100%"></img>
+<!-- <img src="poster.png" alt="What will I see?" style="width:100%"></img> -->
 
 
 
@@ -2956,94 +2780,25 @@ Since this poster is about making a poster, I show the last poster.
 filled.contour(volcano)
 ```
 
+#### Geoportals
 
+#### API Packages
 
-#### Reproducible results with R
+#### File formats
 
-As we have come to expect, results from R computations can be included as well.
-Since adjusting figure positions will be almost always necesary,
-figures are by default saved to `output/img/` and not shown on the poster.
-You need to manually include them using a <img> tag as shown below.
+### **Advanced methods**
 
-```html
-**Fig. 1: Place the volcano figure where you please.**
-<img src="img/volcano-plot-1.png" style="width:100%"></img>
-```
-
-
-#### Output for printing
-
-A png file is produced by `scripts/render-poster.R`.
-By default it is set to use a 300ppi resolution and A1 size.
-For now, some testing is necessary to adjust scale and poster size.
-
-
-### **Discussion**
-
-
-```{r new-standard}
-# Get reference image
-download.file(
-  "https://imgs.xkcd.com/comics/standards.png", mode = "wb",
-  destfile = "../output/img/standards.png"
-)
-```
-
-
-Since there are so many tools that can be used to prepare posters,
-and not a single one satisfies my needs,
-I prepared this *other* tool to... nah it still is missing things.
-
-**Fig. 3: Some authoritative content**
-<img src="img/standards.png" style="width:100%"></img>
-
-
-#### Limitations
-
-Since the png file is generated as a snapshot of the html poster,
-several limitations should be considered:
-
-- Resolution is very limited by the resources in your system
-- Larger formats require much more resources to render
-- Complex posters can take longer to load, so you have to try different delays
-- The preview shown in `poster/poster_frame.html` could be very different to
-the final rendered image
-- "I can't fit enough text/figures!"  
-  ↑ that one's on you, nobody likes a crammed poster
-
-<hr>
+#### Raster/vector interactions
 
 #### Contact information
 
-Oscar de León  
-<a
-  title="Universidad del Valle de Guatemala"
-  href="mailto:odeleon@ces.uvg.edu.gt?Subject=Influenza%20incidence%20Guatemala"
-  target="_top"
->odeleon@ces.uvg.edu.gt</a>  
-<a
-  title="GitHub profile"
-  href="https://github.com/odeleongt"
-  target="_blank"
->https://github.com/odeleongt</a>
-
-
-
 **Aknowledgements:** 
-
-The time had come to face the fact that I was long overdue posting this template.
-
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The time has come to face the fact that I must create a poster. It&#39;s been a while. What&#39;s the least painful way to do this these days?</p>&mdash; Kara Woo <a href="https://twitter.com/kara_woo/status/856644892319137792">April 24, 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 
 ## Row 3 {data-height=10} 
 
 ### **Fig. 2: Place the volcano figure where you please.** {data-width=50}
 
 <img src="img/volcano-plot-1.png" style="height:100%"></img>
-
-
 
 ### {data-width=50 .small}
 
